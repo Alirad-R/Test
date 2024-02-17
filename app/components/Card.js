@@ -3,12 +3,12 @@ import { View, StyleSheet, Image } from "react-native";
 import colors from "../config/colors";
 import AppText from "./AppText";
 
-function Card({ tilte, subtitle, image }) {
+function Card({ title, subtitle, image }) {
   return (
     <View style={styles.card}>
       <Image style={styles.image} source={image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>{tilte}</AppText>
+        <AppText style={styles.title}>{title}</AppText>
         <AppText style={styles.subtitle}>{subtitle}</AppText>
       </View>
     </View>
@@ -18,7 +18,7 @@ function Card({ tilte, subtitle, image }) {
 const styles = StyleSheet.create({
   card: {
     borderRadius: 15,
-    backgroundColor: colors.black,
+    backgroundColor: colors.white,
     marginBottom: 20,
     overflow: "hidden",
   },
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginBottom: 7,
-    color: colors.white,
+    color: colors.black,
   },
   subtitle: {
     color: colors.secondary,
