@@ -13,9 +13,21 @@ import ListItem from "./app/components/ListItem";
 import ListItemDeleteAction from "./app/components/ListItemDeleteAction";
 import AccountScreen from "./app/Screens/AccountScreen";
 import ListingsScreen from "./app/Screens/ListingsScreen";
+import AppText from "./app/components/AppText";
+import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/Screens/LoginScreen";
+import ListingEditScreen from "./app/Screens/ListingEditScreen";
+
+// const categories = [
+//   { label: "Furniture", value: 1 },
+//   { label: "Clothing", value: 2 },
+//   { label: "Cameras", value: 3 },
+// ];
 
 export default function App() {
-  const [firstName, setFirstName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [category, setCategory] = useState();
 
   return (
     // <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -25,13 +37,17 @@ export default function App() {
     //   ></AppButton>
     // </View>
     // <ListingsScreen />
-    <Screen>
-      <Text>{firstName}</Text>
-      <TextInput
-        onChangeText={(text) => setFirstName(text)}
-        placeholder="First name"
-        style={{ borderBottomColor: "#ccc", borderBottomWidth: 1 }}
-      />
-    </Screen>
+    // --------------------------------------------
+    // <Screen>
+    //   <AppPicker
+    //     selectedItem={category}
+    //     onSelectItem={(item) => setCategory(item)}
+    //     items={categories}
+    //     icon="apps"
+    //     placeholder="Category"
+    //   />
+    //   <AppTextInput icon="email" placeholder="Email" />
+    // </Screen>
+    <ListingEditScreen />
   );
 }

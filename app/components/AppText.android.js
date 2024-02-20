@@ -18,7 +18,7 @@ Platform.select({
 
 const styles = StyleSheet.create({
   text: {
-    color: "tomato",
+    // color: "tomato",
     fontSize: 18,
     fontFamily: "Roboto",
   },
