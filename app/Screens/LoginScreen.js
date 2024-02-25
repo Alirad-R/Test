@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet, Image, Button } from "react-native";
 import * as Yup from "yup";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Screen from "../components/Screen";
 import {
@@ -16,7 +18,7 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label("Password"),
 });
 
-function LoginScreen(props) {
+function LoginScreen({ navigation }) {
   // const [email, setEmail] = useState();
   // const [password, setPassword] = useState();
 
@@ -52,6 +54,16 @@ function LoginScreen(props) {
         <SubmitButton title="Login" />
         {/* <AppButton title="Login" onPress={handleSubmit} /> */}
       </AppForm>
+      <Button
+        title="Go to Details... again"
+        onPress={() => navigation.push("Login")}
+      />
+      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button
+        title="Go back to first screen in stack"
+        onPress={() => navigation.popToTop()}
+      />
     </Screen>
   );
 }
